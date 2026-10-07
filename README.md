@@ -34,7 +34,7 @@ from peristalsim import study, diagnose_study, analyse_swallow
 
 swallows, truth = study("achalasia II", seed=0)      # ten synthetic swallows, P[t, z] in mmHg
 dx = diagnose_study(swallows)
-dx["diagnosis"], dx["median_irp"]                     # ('achalasia II', 26.3)
+dx["diagnosis"], dx["median_irp"]                     # ('achalasia II', 26.5)
 analyse_swallow(swallows[0])                          # IRP, DCI, DL, break length, pan-pressurisation
 ```
 
