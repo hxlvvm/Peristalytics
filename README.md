@@ -1,6 +1,6 @@
-# peristalsim
+# Peristalytics
 
-[![tests](https://github.com/hxlvvm/peristalsim/actions/workflows/tests.yml/badge.svg)](https://github.com/hxlvvm/peristalsim/actions/workflows/tests.yml)
+[![tests](https://github.com/hxlvvm/Peristalytics/actions/workflows/tests.yml/badge.svg)](https://github.com/hxlvvm/Peristalytics/actions/workflows/tests.yml)
 
 **An open Chicago Classification v4.0 engine for high-resolution oesophageal manometry, plus a labelled
 synthetic benchmark to test it.**
@@ -9,7 +9,7 @@ High-resolution manometry (HRM) records pressure along the oesophagus during swa
 achalasia, spasm and other motility disorders from a handful of metrics: IRP, DCI, distal latency and
 contraction breaks. They combine these with the Chicago Classification v4.0 (CCv4.0) decision rules.
 
-Those metrics are normally computed by closed vendor software. `peristalsim` provides:
+Those metrics are normally computed by closed vendor software. `Peristalytics` provides:
 
 1. **A metric engine** that computes the CCv4.0 metrics directly from a raw pressure array `P[t, z]`.
    - It covers IRP (4 s e-sleeve), DCI, contractile deceleration point / distal latency, the largest break
@@ -30,7 +30,7 @@ python examples/gallery.py        # figures + robustness table
 ```
 
 ```python
-from peristalsim import study, diagnose_study, analyse_swallow
+from peristalytics import study, diagnose_study, analyse_swallow
 
 swallows, truth = study("achalasia II", seed=0)      # ten synthetic swallows, P[t, z] in mmHg
 dx = diagnose_study(swallows)
@@ -105,7 +105,7 @@ All values are from Yadlapati et al. 2021 (Medtronic system, supine):
 - Miura T. et al. *A mathematical model of human oesophageal motility function.* R Soc Open Sci 2025.
   [doi:10.1098/rsos.250491](https://doi.org/10.1098/rsos.250491)
   - A mechanistic model reproducing CCv4.0 patterns, with code.
-  - `peristalsim` is complementary: it focuses on analysing pressure data and on labelled test cases.
+  - `Peristalytics` is complementary: it focuses on analysing pressure data and on labelled test cases.
 - Existing open repositories found while preparing this classify from metrics a user enters, or provide
   image datasets. I did not find open code that computes the metrics from raw pressure arrays.
 

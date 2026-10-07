@@ -7,8 +7,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-from peristalsim import PHENOTYPES, SwallowSpec, TYPES, diagnose_study, study, swallow
-from peristalsim.synth import DURATION, N_SENSORS
+from peristalytics import PHENOTYPES, SwallowSpec, TYPES, diagnose_study, study, swallow
+from peristalytics.synth import DURATION, N_SENSORS
 
 Path("assets").mkdir(exist_ok=True)
 
@@ -39,7 +39,7 @@ levels = [(1.5, 0.15), (3.0, 0.25), (5.0, 0.35), (8.0, 0.45)]
 phen = list(PHENOTYPES)
 n = 20
 acc = np.zeros((len(phen), len(levels)))
-import peristalsim.synth as synth
+import peristalytics.synth as synth
 orig = synth.swallow
 for j, (noise, jitter) in enumerate(levels):
     def noisy(spec, rng=None, _noise=noise):

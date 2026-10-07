@@ -3,7 +3,7 @@ requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "peristalsim"
+name = "peristalytics"
 version = "0.1.0"
 description = "Synthetic high-resolution oesophageal manometry and an open Chicago Classification v4.0 metric engine (IRP, DCI, DL, breaks)"
 readme = "README.md"
@@ -18,7 +18,7 @@ examples = ["matplotlib"]
 dev = ["pytest"]
 
 [project.urls]
-Homepage = "https://github.com/hxlvvm/peristalsim"
+Homepage = "https://github.com/hxlvvm/Peristalytics"
 
 [tool.setuptools.packages.find]
 where = ["src"]

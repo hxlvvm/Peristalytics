@@ -2,8 +2,8 @@
 import numpy as np
 import pytest
 
-from peristalsim import PHENOTYPES, SwallowSpec, analyse_swallow, diagnose_study, study, swallow
-from peristalsim.metrics import FS, dci
+from peristalytics import PHENOTYPES, SwallowSpec, analyse_swallow, diagnose_study, study, swallow
+from peristalytics.metrics import FS, dci
 
 
 def test_dci_of_a_constant_block_is_exact():
@@ -37,7 +37,7 @@ def test_landmarks_are_detected_from_the_data():
                                            ("fragmented", "fragmented"), ("premature", "premature"),
                                            ("hypercontractile", "hypercontractile"), ("pan", "failed")])
 def test_swallow_types(typ, expected):
-    from peristalsim import TYPES
+    from peristalytics import TYPES
     m = analyse_swallow(swallow(SwallowSpec(**TYPES[typ]), np.random.default_rng(3)))
     assert m.swallow_type == expected
 
