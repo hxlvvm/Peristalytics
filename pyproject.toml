@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "peristalsim"
+version = "0.1.0"
+description = "Synthetic high-resolution oesophageal manometry and an open Chicago Classification v4.0 metric engine (IRP, DCI, DL, breaks)"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Abdul Haleem"}]
+requires-python = ">=3.9"
+dependencies = ["numpy"]
+keywords = ["manometry", "esophagus", "chicago-classification", "gastroenterology", "biomedical-engineering", "signal-processing"]
+
+[project.optional-dependencies]
+examples = ["matplotlib"]
+dev = ["pytest"]
+
+[project.urls]
+Homepage = "https://github.com/hxlvvm/peristalsim"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
