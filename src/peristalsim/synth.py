@@ -1,18 +1,4 @@
-"""Synthetic high-resolution manometry (HRM) swallows with known ground truth.
-
-A swallow is a pressure array P[t, z] (mmHg) sampled at 20 Hz on 36 sensors 1 cm apart. Pressures are
-referenced to the stomach (gastric pressure ~ 0). Layout (cm from the top sensor):
-    0-2    upper oesophageal sphincter (UES)
-    3-8    proximal (striated-muscle) body;  ~9-10  transition zone (pressure trough)
-    11-29  distal (smooth-muscle) body
-    30-34  oesophago-gastric junction (EGJ / LES), centre 32;  35  stomach
-The UES relaxes at t_ues = 2 s. Each sensor contracts as a smooth pulse whose onset travels down the
-oesophagus quickly to the contractile deceleration point (CDP) and slowly after it, so the distal latency
-DL = t_onset(CDP) - t_ues is a parameter. The EGJ relaxes after the swallow to a set nadir, which sets IRP.
-
-This is a phenomenological generator for testing analysis software, not a physiological model (for that,
-see Miura et al., R Soc Open Sci 2025).
-"""
+"""Synthetic high-resolution manometry swallows with known ground truth."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -133,10 +119,7 @@ PHENOTYPES = {
 
 
 def study(phenotype: str, seed: int = 0, jitter: float = 0.15):
-    """Ten supine swallows of a phenotype, with per-swallow random variation.
-
-    Returns (swallows, truth) where swallows is a list of P[t, z] arrays and truth the swallow types.
-    """
+    """Ten supine swallows of a phenotype, with per-swallow random variation."""
     rng = np.random.default_rng(seed)
     types, nadir, ibp = PHENOTYPES[phenotype]
     types = list(rng.permutation(types))

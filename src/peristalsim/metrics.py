@@ -1,16 +1,4 @@
-"""Chicago Classification v4.0 swallow metrics from a raw pressure topography P[t, z].
-
-Definitions (Yadlapati et al., Neurogastroenterol Motil 33:e14058, 2021, doi:10.1111/nmo.14058):
-- IRP: mean of the 4 s of greatest EGJ relaxation (non-contiguous) in the 10 s window after UES relaxation,
-  measured on an electronic sleeve (the maximum pressure across the EGJ sensors at each instant).
-- DCI: integral of pressure above 20 mmHg over the distal oesophagus, from the transition zone to the
-  proximal border of the EGJ (mmHg*s*cm).
-- CDP: the inflection between the fast proximal and the slow distal phase of the 30 mmHg isobaric contour.
-  DL = t(CDP) - t(UES relaxation).
-- Break: the longest gap in the 20 mmHg isobaric contour along the oesophageal body (cm).
-- Panesophageal pressurisation: simultaneous pressurisation of the whole body above 30 mmHg.
-Landmarks (UES relaxation time, EGJ, transition zone) are detected from the data, not assumed.
-"""
+"""Chicago Classification v4.0 swallow metrics (IRP, DCI, DL, breaks) from P[t, z]."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -118,7 +106,7 @@ def largest_break(p: np.ndarray, t_ues: float, z_egj: int, fs: float = FS, top: 
 
 def panesophageal(p: np.ndarray, t_ues: float, z_egj: int, fs: float = FS, top: int = 3,
                   level: float = 30.0, min_s: float = 1.0) -> bool:
-    """True if the whole body (top .. EGJ) is above `level` simultaneously for at least min_s seconds."""
+    """True if the whole body (top .."""
     win = p[int(t_ues * fs): int((t_ues + 15) * fs), top: z_egj - 1]
     allp = (win >= level).all(axis=1)
     run = best = 0

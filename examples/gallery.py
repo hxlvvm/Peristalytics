@@ -1,8 +1,4 @@
-"""Figures: a Clouse-plot gallery of every phenotype, and a robustness benchmark.
-
-    python examples/gallery.py
-writes assets/gallery.png, assets/robustness.png and prints the benchmark table.
-"""
+"""Phenotype gallery and robustness benchmark (writes assets/gallery.png, assets/robustness.png)."""
 from pathlib import Path
 
 import matplotlib

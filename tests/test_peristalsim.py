@@ -1,4 +1,4 @@
-"""Checks of the CCv4 metric engine against swallows with known ground truth."""
+"""Tests of the CCv4 metric engine against synthetic swallows."""
 import numpy as np
 import pytest
 

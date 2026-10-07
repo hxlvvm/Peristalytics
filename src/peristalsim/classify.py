@@ -1,20 +1,4 @@
-"""Study-level Chicago Classification v4.0 diagnosis from ten supine swallows.
-
-Thresholds (Medtronic system, supine): median IRP upper limit 15 mmHg. Hierarchy, following CCv4.0:
-  abnormal IRP:
-    100 % failed peristalsis + >= 20 % panesophageal pressurisation  -> achalasia type II
-    100 % failed peristalsis                                         -> achalasia type I
-    >= 20 % premature contractions and no peristalsis                -> achalasia type III
-    otherwise (evidence of peristalsis)                              -> EGJ outflow obstruction
-  normal IRP:
-    100 % failed peristalsis                                         -> absent contractility
-    >= 20 % premature contractions                                   -> distal oesophageal spasm
-    >= 20 % hypercontractile swallows                                -> hypercontractile oesophagus
-    > 70 % ineffective swallows or >= 50 % failed                    -> ineffective oesophageal motility
-    otherwise                                                        -> normal
-Simplifications: supine swallows only (CCv4.0 also uses upright swallows and provocation), and the
-"clinically relevant / inconclusive" layers that need symptoms or further tests are not modelled.
-"""
+"""Chicago Classification v4.0 study diagnosis from ten supine swallows."""
 from __future__ import annotations
 
 import numpy as np

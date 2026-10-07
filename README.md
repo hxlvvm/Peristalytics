@@ -51,7 +51,7 @@ time; columns run from the pharynx (0) to the stomach. Pressures are referenced 
 | swallow typing (normal / weak / failed / fragmented / premature / hypercontractile / pressurised) | 7 of 7 |
 | study diagnosis, 9 phenotypes × 10 synthetic studies | **90 of 90** |
 
-That last number is **partly circular**: the generator and the engine share the same assumptions. The
+The generator and the engine share the same assumptions, so this is a consistency check rather than a validation. The
 useful number is how accuracy falls as the data get messier:
 
 | sensor noise / swallow-to-swallow variability | 1.5 mmHg / 15 % | 3 mmHg / 25 % | 5 mmHg / 35 % | 8 mmHg / 45 % |
